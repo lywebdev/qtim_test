@@ -2,6 +2,7 @@
 
 - git clone git@github.com:lywebdev/qtim_test.git
 - docker-compose up -d --build
+- внутри запущенного web контейнера выполнить composer install
 
 #### Для получения результата тестового задания перейти по адресу:
 localhost:8080/api/test/event
