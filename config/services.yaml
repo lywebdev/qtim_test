@@ -20,5 +20,16 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\modules\logging\event_dispatchers\LoggingEventDispatcher:
+        arguments:
+            $eventDispatcher: '@event_dispatcher'
+            $logger: '@logger'
+
+    api.test.dispatched:
+        class: App\modules\api\test\listeners\ApiTestEventListener
+        arguments:
+            $logger: '@logger'
+        tags:
+            - { name: kernel.event_listener, event: api.test.dispatched, method: onApiTestDispatched }
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

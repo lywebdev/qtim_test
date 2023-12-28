@@ -1,0 +1,3 @@
+api_test_event:
+  path: /api/test/event
+  controller: 'App\modules\api\test\controllers\ApiTestController::event'
